@@ -8,6 +8,7 @@ import { TechnologyComponent } from './technology/technology.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'destination', component: DestinationComponent },
+  { path: 'destination/:name/:image/:description/:distance/:travel', component: DestinationComponent },
   { path: 'crew', component: CrewComponent },
   { path: 'technology', component: TechnologyComponent },
 ];

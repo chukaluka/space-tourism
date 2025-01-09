@@ -1,7 +1,9 @@
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 .home-container {
@@ -25,7 +27,6 @@ nav {
   justify-content: center;
   background-image: url('../src/assets/nav-blur.png');
   height: 70px;
-
 }
 
 nav ul {
@@ -49,6 +50,7 @@ nav li {
 nav li a {
   text-decoration: none;
   color: white;
+  text-transform: uppercase;
 }
 
 nav li::after {
@@ -67,6 +69,7 @@ nav li:hover::after {
   bottom: -28px; /* Moves the line downward */
 }
 
+
 .horizontal-line {
   position: absolute;
   top: 75px;
@@ -77,4 +80,12 @@ nav li:hover::after {
   background-color: white;
   z-index: 1;
   opacity: 0.3;
+}
+
+.span-o {
+  font-weight: bold;
+}
+
+.a-o {
+  font-weight: lighter;
 }

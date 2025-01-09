@@ -1,3 +1,6 @@
+* {
+  color: whitesmoke
+}
 
 .destination-div{
   position: relative;
@@ -6,4 +9,12 @@
   background-image: url('../../assets/destination/background-destination-desktop.jpg');
   background-size: cover;
   background-position: center;
+}
+
+.boot-ul a {
+  color: white;
+}
+
+button {
+  background-color: black;
 }
