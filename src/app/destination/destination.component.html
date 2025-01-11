@@ -1,3 +1,4 @@
+<!-- destination.component.html -->
 <div class="destination-div">
   <div class="home-container">
     <img src="../../assets/shared/logo.svg" alt="logo" class="logo">
@@ -20,18 +21,41 @@
     </nav>
   </div>
 
-  <div>
-    <div>
-      <h1><span>01</span> Pick your destination</h1>
+  <div class="dest-body">
+    <div class="dest-container">
+      <div class="dest-heading1">
+        <h1 class="dest-h1"><span class="dest-span">01</span> Pick your destination</h1>
+      </div>
+
+      <div class="dest-heading1">
+        <div>
+          <ul class="dest-nav">
+            <li *ngFor="let destination of destinationJson" (click)="onSelect(destination)">
+                <h4>{{destination.name}}</h4>
+            </li>
+          </ul>
+        </div>
+
+      </div>
     </div>
-    <div>
 
-    <li *ngFor="let destination of destinationJso">
-      {{destination.name}}
-    </li>
+      <div *ngIf="selectedDestination" class="dest-container">
+        <div class="dest-heading2">
+          <img src="{{selectedDestination.images}}" alt="{{selectedDestination.name}}" class="dest-img">
+        </div>
+        <div class="dest-heading2">
+          <h2>{{selectedDestination.name | uppercase}}</h2>
+          <p>{{selectedDestination.description}}</p>
+          <hr/>
+          <div class="div-h3">
+            <h4>Avg. distance <br><span class="div-span">{{selectedDestination.distance}}</span></h4>
+            <h4>Est. travel time <br><span class="div-span">{{selectedDestination.travel}}</span></h4>
+          </div>
+        </div>
+
+      </div>
 
 
-    </div>
   </div>
 </div>
 

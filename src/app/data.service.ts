@@ -7,11 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
 
+  dataUrl = 'assets/data.json';
 
   constructor(private http: HttpClient) { }
 
-  getJsonData() {
-    return this.http.get('assets/data.json')
+  getJsonData(): Observable<any> {
+    return this.http.get<any>(this.dataUrl)
   }
 
 }

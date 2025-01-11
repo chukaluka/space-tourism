@@ -1,9 +1,6 @@
 export interface Destination {
   name: string;
-  images: {
-    png: string;
-    webp: string;
-  };
+  images: string;
   description: string;
   distance: string;
   travel: string;

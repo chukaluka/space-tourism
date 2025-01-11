@@ -1,5 +1,5 @@
+//destination.component.ts
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../data.service';
 import { Data, Destination } from '../data';
 
@@ -12,14 +12,20 @@ export class DestinationComponent implements OnInit {
 
   destinationJson: Destination[] = [];
 
-  constructor(private route: ActivatedRoute, private dataService: DataService) { }
+  selectedDestination?: Destination;
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.dataService.getJsonData().subscribe((res: any) => {
-      this.destinationJson = res;
+    this.dataService.getJsonData().subscribe((res: Data) => {
+      console.log(res);
+      this.destinationJson = res.destinations;
     })
   }
 
+  onSelect(destination: Destination): void {
+    this.selectedDestination = destination;
+  }
 
 
 }
