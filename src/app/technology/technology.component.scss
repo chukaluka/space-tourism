@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kumbh+Sans:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 .technology-div{
   position: relative;
   height: 100vh;
@@ -5,4 +10,125 @@
   background-image: url('../../assets/technology/background-technology-desktop.jpg');
   background-size: cover;
   background-position: center;
+}
+
+*{
+  color: white;
+}
+
+.circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: transparent; // Made transparent to show border
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex; // Added for centering number
+  align-items: center; // Center vertically
+  justify-content: center; // Center horizontally
+  color: white;
+  font-size: 16px;
+
+  &:hover {
+    border-color: white;
+  }
+
+  &.active {
+    background-color: white;
+    color: black; // Change number color when active
+  }
+}
+
+.circle.active {
+  background-color: rgb(255, 255, 255);
+}
+
+.tech-h1 {
+  font-family: "Barlow Condensed", serif;
+  font-size: 10px;
+  gap: 2rem;
+  letter-spacing: 3px;
+  font-weight: 300;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.tech-h2 {
+  font-family: barlow condensed;
+  font-size: 16px;
+  gap: 2rem;
+  letter-spacing: 3px;
+  font-family: "Barlow Condensed", serif;
+  font-weight: 300;
+  text-transform: uppercase;
+
+}
+
+.tech-span {
+  opacity: 0.3;
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+.tech-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.tech-name {
+  font-family: "Bellefair", serif;
+  font-size: 29px;
+  text-transform: uppercase;
+}
+
+.tech-bio {
+  font-family: "Barlow Condensed", serif;
+  font-size: 14px;
+  opacity: 0.8;
+  line-height: 1.5;
+  font-weight: lighter;
+}
+
+.tech-container {
+  padding: 4rem 0 0 8rem;
+}
+
+.tech-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  height: 50vh; // Control the height of the content area
+}
+
+.tech-body {
+  &:first-child { // Left side content
+    flex: 1;
+    display: flex;
+    gap: 3rem;
+    padding-top: 3rem; // Add some top padding for alignment
+  }
+
+  &:last-child { // Image container
+    flex: 1;
+    height: 100%;
+  }
+}
+
+.circle-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tech-details {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%; // Control the width of the text content
+}
+
+.tech-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }

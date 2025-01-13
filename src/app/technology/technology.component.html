@@ -20,32 +20,39 @@
     </nav>
   </div>
 
-  <div class="tech-container">
-    <div class="tech-body">
-      <h2 class="tech-h2"><span class="tech-span">02</span>Meet your tech</h2>
+    <div class="tech-container">
+      <h2 class="tech-h2"><span class="tech-span">03</span>space launch 101</h2>
 
-       <!-- Technology Information -->
-       <div class="tech-details" *ngIf="selectedTechnology">
-        <h2 class="tech-name">{{selectedTechnology.name}}</h2>
-        <p class="tech-bio">{{selectedTechnology.description}}</p>
-      </div>
+        <div class="tech-grid">
+          <!-- Navigation Circles -->
+          <div class="tech-body">
+            <div class="circle-navigation">
+              <div class="circle"
+                *ngFor="let crew of technologyJson; let i = index"
+                [class.active]="activeCircle === i + 1"
+                (click)="selectCircle(i + 1)"
+                >
+                {{ i + 1 }}
+              </div>
+            </div>
 
-      <!-- Navigation Circles -->
-      <div class="circle-navigation">
-        <div class="circle"
-          *ngFor="let crew of technologyJson; let i = index"
-          [class.active]="activeCircle === i + 1"
-          (click)="selectCircle(i + 1)">
+
+            <!-- Technology Information -->
+            <div class="tech-details" *ngIf="selectedTechnology">
+              <h1 class="tech-h1">The terminology...</h1>
+              <h2 class="tech-name">{{selectedTechnology.name}}</h2>
+              <p class="tech-bio">{{selectedTechnology.description}}</p>
+            </div>
+          </div>
+
+          <!-- Technology Image -->
+          <div class="tech-body" *ngIf="selectedTechnology">
+            <img [src]="selectedTechnology.images.portrait" [alt]="selectedTechnology.name" class="tech-img">
+          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Technology Image -->
-    <div class="tech-body" *ngIf="selectedTechnology">
-      <img [src]="selectedTechnology.images.jpg" [alt]="selectedTechnology.name" class="tech-img">
-    </div>
 
-  </div>
+    </div>
 
 </div>
 

@@ -19,7 +19,7 @@ export interface Crew {
 export interface Technology {
   name: string;
   images: {
-    jpg: string;
+    portrait: string;
     landscape: string;
   };
   description: string;
