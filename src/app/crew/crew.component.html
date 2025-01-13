@@ -20,6 +20,34 @@
     </nav>
   </div>
 
+  <div class="crew-container">
+    <div class="crew-body">
+      <h2 class="crew-h2"><span class="crew-span">02</span>Meet your crew</h2>
+
+       <!-- Crew Information -->
+       <div class="crew-details" *ngIf="selectedCrew">
+        <h3 class="crew-role">{{selectedCrew.role}}</h3>
+        <h2 class="crew-name">{{selectedCrew.name}}</h2>
+        <p class="crew-bio">{{selectedCrew.bio}}</p>
+      </div>
+
+      <!-- Navigation Circles -->
+      <div class="circle-navigation">
+        <div class="circle"
+          *ngFor="let crew of crewJson; let i = index"
+          [class.active]="activeCircle === i + 1"
+          (click)="selectCircle(i + 1)">
+        </div>
+      </div>
+    </div>
+
+    <!-- Crew Image -->
+    <div class="crew-body" *ngIf="selectedCrew">
+      <img [src]="selectedCrew.images.png" [alt]="selectedCrew.name" class="crew-img">
+    </div>
+
+  </div>
 </div>
+
 
 

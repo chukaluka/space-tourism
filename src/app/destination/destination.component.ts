@@ -13,6 +13,7 @@ export class DestinationComponent implements OnInit {
   destinationJson: Destination[] = [];
 
   selectedDestination?: Destination;
+  
 
   constructor(private dataService: DataService) { }
 
